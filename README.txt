@@ -1,6 +1,16 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.6.5
+Wikipedia_Machine_v.2.7.0
+
+2.7.0:
+-- Goals:
+    1. TODO -- Format contents of .results <div> (to make things look nicer) (e.g. Use Bootstrap "Panels")
+    CONTINUE IN V. 2.7.1
+    2. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    3. TODO -- Add 'Start over' button after first search
+    4. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    5. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    6. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.6.5:
 -- Goals:

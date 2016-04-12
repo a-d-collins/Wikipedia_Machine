@@ -15,38 +15,36 @@ function searchResults() {
         headers: { 'Api-User-Agent': 'bot' },
         success: function (data) {
             
-            var page, pageDescription;
-            
             for (var i = 0; i < data.query.pages.length; i++) {
+                var page, pageInfo;
+            
                 page = data.query.pages[i];
+                pageInfo = "No page information to display.";
                 
-                $('.results').append('<p><a target="_blank" href="https://en.wikipedia.org/?curid=' + page.pageid + '">'+page.title+'</a></p>');
                 // If the search result does not have a description...
                 if (!page.terms.description) {
                     // Then it is highly unlikely that the page is a 'Wikipedia disambiguation page' and therefore,
-                    // it is reasonable to append the pageExtract underneath the pageTitle
-                    $('.results').append('<p>'+page.extract+'</p>');
+                    // it is reasonable to display the page.extract as the pageInfo
+                    pageInfo = page.extract;
                 }
                 // Else if 'description' includes/contains the string 'Wikipedia disambiguation page' OR 'Wikimedia disambiguation page' ...
                 else if (page.terms.description.includes('Wikipedia disambiguation page') || page.terms.description.includes('Wikimedia disambiguation page')) {
                     // Then it is a 'disambiguation' page and ...
                     // If the extract contains the string " refer to:" || " refers to:" || other variations of that ...
                     if (page.extract.includes(' refer to:') || page.extract.includes(' refers to:') || page.extract.includes(' refer to :') || page.extract.includes(' refers to :')) {
-                        // append the page description ('Wikipedia disambiguation page')
-                        $('.results').append('<p>'+page.terms.description+'</p>');
+                        // make pageInfo equal to the page description ('Wikipedia disambiguation page')
+                        pageInfo = page.terms.description;
                     } else {
                         // append page extract
-                        $('.results').append('<p>'+page.extract+'</p>');
+                        pageInfo = page.extract;
                     }
                 } else {
                     // append page extract
-                    $('.results').append('<p>'+page.extract+'</p>');
+                    pageInfo = page.extract;
                 }
                 
-                // If not last page, append a horzontal rule
-                if (i != data.query.pages.length - 1) {
-                    $('.results').append('<hr>');
-                }
+                // append a bootstrap panel that contains page.title, pageInfo, and acts as a link to the matching wikipedia page
+                $('.results').append('<a target="_blank" href="https://en.wikipedia.org/?curid=' + page.pageid + '"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'+page.title+'</h3></div><div class="panel-body">'+pageInfo+'</div></div></a>');
             }
 
         },
