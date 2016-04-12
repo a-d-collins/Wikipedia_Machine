@@ -1,5 +1,63 @@
 var currentSearchTerm;
 
+// Called when #searchInput is clicked
+function expandSearchBox() {
+    // Expand the width of the searchBox with class 'sBoxExpanded'
+    $('.searchBox').addClass('sBoxExpanded');
+}
+
+// inputFocus() -- focuses on #searchInput field
+function inputFocus() {
+    $('#searchInput').focus();
+}
+
+// startOver() -- Reloads web page
+function startOver() {
+    // Reloading a page IS NOT ALLOWED IN CODEPEN
+    // location.reload();
+    // Instead, try the following...
+    // Clear search results
+    $('.results').empty();
+    // Reset form
+    // $('#searchForm').reset(); does not work in codepen
+    // Clear form input field  
+    $('#searchInput').val('');
+    // Un-expand the searchBox (removing class 'sBoxExpanded')
+    $('.searchBox').removeClass('sBoxExpanded');
+    // Remove postSearch effects
+    $('.searchBox').removeClass('sBoxPostSearch');
+    $('#searchInput').removeClass('siPostSearch');
+    $('.searchButton').removeClass('sButtonPostSearch');
+    // Add absoluteCenter effects on .searchBox
+    $('.searchBox').addClass('absoluteCenter');
+}
+
+// Handles events when searchButton is clicked (click event only occurs when pointer-events CSS attribute does NOT have value 'none')
+function search() {
+    /* 3/18/2016 -- Replacement, short-hand code */
+    if ($('.searchBox').hasClass('absoluteCenter')) {
+        // Remove absoluteCenter effects on .searchBox
+        $('.searchBox').removeClass('absoluteCenter');
+        // Add postSearch effects
+        $('.searchBox').addClass('sBoxPostSearch');
+        $('#searchInput').addClass('siPostSearch');
+        $('.searchButton').addClass('sButtonPostSearch');
+        // DONE: Populate searchResults area
+        searchResults();
+    }
+    // If .searchBox does not have class 'absoluteCenter' then this may be new search, thus necessitating a clearing of the previous search results.
+    // Before calling the searchResults() function, though, it would be wise to make sure that the #searchInput field has actually changed.
+    // (else) if the #searchInput field has changed...
+    else if ($('#searchInput').val() != currentSearchTerm) {
+        // DONE (4/2/2016) Clear search results
+        $('.results').empty();
+        // Populate searchResults area
+        searchResults();
+    } else {
+        // Do nothing (for now)
+    }
+}
+
 // searchResults() -- Populates search results div
 function searchResults() {
     var $formInput = $('#searchInput'),
@@ -31,7 +89,7 @@ function searchResults() {
                 else if (page.terms.description.includes('Wikipedia disambiguation page') || page.terms.description.includes('Wikimedia disambiguation page')) {
                     // Then it is a 'disambiguation' page and ...
                     // If the extract contains the string " refer to:" || " refers to:" || other variations of that ...
-                    if (page.extract.includes(' refer to:') || page.extract.includes(' refers to:') || page.extract.includes(' refer to :') || page.extract.includes(' refers to :')) {
+                    if (page.extract.includes(' refer to:') || page.extract.includes(' refers to:') || page.extract.includes(' refer to :') || page.extract.includes(' refers to :') || page.extract.includes(' can be:')) {
                         // make pageInfo equal to the page description ('Wikipedia disambiguation page')
                         pageInfo = page.terms.description;
                     } else {
@@ -53,64 +111,6 @@ function searchResults() {
             alert(errorMessage);
         }
     });
-}
-
-// Handles events when searchButton is clicked (click event only occurs when pointer-events CSS attribute does NOT have value 'none')
-function search() {
-    /* 3/18/2016 -- Replacement, short-hand code */
-    if ($('.searchBox').hasClass('absoluteCenter')) {
-        // Remove absoluteCenter effects on .searchBox
-        $('.searchBox').removeClass('absoluteCenter');
-        // Add postSearch effects
-        $('.searchBox').addClass('sBoxPostSearch');
-        $('#searchInput').addClass('siPostSearch');
-        $('.searchButton').addClass('sButtonPostSearch');
-        // DONE: Populate searchResults area
-        searchResults();
-    }
-    // If .searchBox does not have class 'absoluteCenter' then this may be new search, thus necessitating a clearing of the previous search results.
-    // Before calling the searchResults() function, though, it would be wise to make sure that the #searchInput field has actually changed.
-    // (else) if the #searchInput field has changed...
-    else if ($('#searchInput').val() != currentSearchTerm) {
-        // DONE (4/2/2016) Clear search results
-        $('.results').empty();
-        // Populate searchResults area
-        searchResults();
-    } else {
-        // Do nothing (for now)
-    }
-}
-
-// Called when #searchInput is clicked
-function expandSearchBox() {
-    // Expand the width of the searchBox with class 'sBoxExpanded'
-    $('.searchBox').addClass('sBoxExpanded');
-}
-
-// inputFocus() -- focuses on #searchInput field
-function inputFocus() {
-    $('#searchInput').focus();
-}
-
-// reloadDocument() -- Reloads web page
-function reloadDocument() {
-    // Reloading a page IS NOT ALLOWED IN CODEPEN
-    // location.reload();
-    // Instead, try the following...
-    // Clear search results
-    $('.results').empty();
-    // Reset form
-    // $('#searchForm').reset(); does not work in codepen
-    // Clear form input field  
-    $('#searchInput').val('');
-    // Un-expand the searchBox (removing class 'sBoxExpanded')
-    $('.searchBox').removeClass('sBoxExpanded');
-    // Remove postSearch effects
-    $('.searchBox').removeClass('sBoxPostSearch');
-    $('#searchInput').removeClass('siPostSearch');
-    $('.searchButton').removeClass('sButtonPostSearch');
-    // Add absoluteCenter effects on .searchBox
-    $('.searchBox').addClass('absoluteCenter');
 }
 
 $(document).ready(function () {

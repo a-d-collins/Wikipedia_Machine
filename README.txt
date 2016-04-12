@@ -1,6 +1,14 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.7.3
+Wikipedia_Machine_v.2.8.0
+
+2.8.0:
+-- Goals:
+    1. TODO -- Reorganize JS a little bit
+    2. TODO -- Rename reloadDocument() function to "startOver()"
+    2. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    3. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    4. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.7.3:
 -- Goals:
