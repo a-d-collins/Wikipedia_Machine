@@ -75,9 +75,9 @@ body {
     line-height: 60px;
 }
 
-#searchInput:invalid ~ .clearInput {
+#searchInput:invalid ~ .clearInput, #searchInput.preSearch:not(:focus) ~ .clearInput {
     opacity: 0;
-    right: 2px;
+    right: -2px;
     z-index: -1;
 }
 

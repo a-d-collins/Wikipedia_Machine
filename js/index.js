@@ -1,10 +1,12 @@
+var currentSearchTerm;
+
 // searchResults() -- Populates search results div
 function searchResults() {
     var $formInput = $('#searchInput'),
         term = $formInput.val().replace(" ","+"),
         queryUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts%7Cpageterms&generator=search&redirects=1&formatversion=2&pithumbsize=50&pilimit=10&exsentences=2&exlimit=10&exintro=1&explaintext=1&gsrsearch="+term+"&gsrlimit=10";
     
-    alert($formInput.val());
+    currentSearchTerm = $formInput.val();
     
     $.ajax({
         type: "POST",
@@ -65,17 +67,13 @@ function search() {
     /* 3/18/2016 -- Replacement, short-hand code */
     if ($('.searchBox').hasClass('preSearch')) {
         // Remove preSearch effects on .searchBox
-        $('.searchBox').removeClass('preSearch');
+        $('.searchBox, #searchInput').removeClass('preSearch');
         // Add postSearch effects
         $('.searchBox, #searchInput, .searchButton').addClass('postSearch');
+        // TODO: Populate searchResults area
+        searchResults();
     }
-    // else -- .searchBox does not have class 'preSearch' then this is a new search and...
-    else {
-        //the previous search results must be cleared
-        $('.results').empty();
-    }
-     
-    /* Deprecated in v. 2.6.1
+    // If .searchBox does not have class 'preSearch' then this may be new search, thus necessitating a clearing of the previous search results.
     // Before calling the searchResults() function, though, it would be wise to make sure that the #searchInput field has actually changed.
     // (else) if the #searchInput field has changed...
     else if ($('#searchInput').val() != currentSearchTerm) {
@@ -85,10 +83,7 @@ function search() {
         searchResults();
     } else {
         // Do nothing (for now)
-    }*/
-    
-    // TODO: Populate searchResults area
-    searchResults();
+    }
 }
 
 // Called when #searchInput is clicked
@@ -119,11 +114,10 @@ $(document).ready(function () {
         clearInput();
     });
     
-    /* 
     // Handle click on #searchIcon
     $('#searchIcon').click(function() {
         search();
-    });*/
+    });
     
     /* Deprecated 3/31/2016
     // Handle  enter-key when input field is populated
@@ -142,13 +136,7 @@ $(document).ready(function () {
     $('#searchForm').submit(function(event) {
         // Stop form from submitting normally
         event.preventDefault();
-        
-        //search();
-    });
-    
-    // Handles form submission when #searchForm changes
-    $('#searchForm').change(function () {
-        alert("I'm working");
+        // search for term in input field
         search();
     });
     

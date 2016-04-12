@@ -1,6 +1,18 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.6.1
+Wikipedia_Machine_v.2.6.2
+
+2.6.2:
+-- Goals:
+    1. TODO -- REVERT TO FUNCTIONALITY FROM v. 2.5
+    2. TODO -- Fix some issues with clearInput() function
+    CONTINUE TODO LIST IN V. 2.6.3
+    2. TODO -- Clean up clearInput() function
+    3. TODO -- Format contents of .results <div> (to make things look nicer)
+    4. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    5. TODO -- Add 'Start over' button after first search
+    6. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    7. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
 
 2.6.1:
 -- Goals:
