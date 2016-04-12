@@ -68,7 +68,27 @@ $(document).ready(function () {
     
     // Handles form onsubmit
     $('#searchForm').submit(function(event) {
-        return false;
+        // Stop form from submitting normally
+        event.preventDefault();
+        
+        // Get some values from elements on the page:
+        var $form = $( this ),
+            term = $form.find( "input[name='wikiThis']" ).val(),
+            queryUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&generator=search&redirects=1&formatversion=2&pithumbsize=50&pilimit=10&exsentences=2&exlimit=10&exintro=1&explaintext=1&gsrsearch=Grand+Canyon&gsrlimit=10";
+        
+        $.ajax({
+            type: "POST",
+            url: queryUrl,
+            dataType: "jsonp",
+            headers: { 'Api-User-Agent': 'bot' },
+            success: function (data) {
+
+                var markup = data.query.pages[0].pageid;
+                var blurb = $('.resultsContainer').html(markup);
+            },
+            error: function (errorMessage) {
+            }
+        });
     });
     
     // When document senses a click...

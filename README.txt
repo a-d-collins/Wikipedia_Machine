@@ -1,6 +1,9 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.3
+2.4:
+-- Goals:
+    1. DONE -- Test jquery.ajax function
+    2. DONE -- Disable autocomplete on the 'input' element UNTIL FURTHER NOTICE
 
 2.3:
 -- Goals:
