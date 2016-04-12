@@ -1,67 +1,77 @@
+html, body {
+    height: 100%;
+}
+
 body {
     text-align: center;
 }
 
 .searchBox {
-    display: inline-block;
     border: 2px black solid;
     border-radius: 30px;
     height: 60px;
+    transition: width 0.5s ease;
     width: 60px;
-    transition: all 0.5s ease;
 }
 
-.searchBox.preSearch {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.absoluteCenter {
+    position: relative;
     margin: auto;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.searchBox.postSearch {
+.sBoxPostSearch {
+    display: inline-block;
     position: relative;
 }
 
-.searchBox:hover, .searchBox.expanded {
+.searchBox:hover, .sBoxExpanded {
     width: 40%;
 }
 
-.searchBox:hover #searchInput, #searchInput:focus, #searchInput.postSearch {
+.searchBox:hover .sInput, .sInput:focus, .siPostSearch {
     opacity: 1;
 }
 
-.searchBox:hover .searchButton, #searchInput:focus ~ .searchButton, .searchButton.postSearch {
+.searchBox:hover .searchButton, .sInput:focus ~ .searchButton, .sButtonPostSearch {
+    -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg); /* IE 9 */
+    -o-transform: rotate(0deg);
     -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
     transform: rotate(0deg);
 }
 
 .searchButton, .clearInput {
-    position: absolute;
-    width: 60px;
     height: 60px;
+    position: absolute;
     transition: all 0.2s ease;
+    width: 60px;
 }
 
 .searchButton {
+    color: black;
     font-size: 30px;
-    right: -2px;
-    top: -2px;
     padding-top: 10px;
     padding-left: 4px;
-    color: black;
+    right: -2px;
+    top: -2px;
+    -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg); /* IE 9 */
+    -o-transform: rotate(90deg);
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
 }
 
-#searchInput:invalid ~ .searchButton {
+.sInput:invalid ~ .searchButton {
     pointer-events: none;
 }
 
-#searchInput:focus:invalid ~ .searchButton {
+.sInput:focus:invalid ~ .searchButton {
     color: #a6a6a6;
     pointer-events: none;
 }
@@ -69,58 +79,56 @@ body {
 .clearInput {
     background-color: transparent;
     border: none;
-    right: -62px;
-    top: -2px;
     font-size: 28px;
     line-height: 60px;
+    right: -62px;
+    top: -2px;
 }
 
-#searchInput:invalid ~ .clearInput, .searchBox:not(.expanded) .clearInput {
+.sInput:invalid ~ .clearInput, .searchBox:not(.sBoxExpanded) .clearInput {
     opacity: 0;
     right: -2px;
     z-index: -1;
 }
 
-#searchInput {
-    padding-right: 50px;
+.sInput {
     border-radius: 30px;
-    height: 56px;
-    width: 100%;
-    opacity: 0;
     font-size: 18px;
+    height: 56px;
+    opacity: 0;
+    padding-right: 50px;
     transition: all 0.5s ease;
+    width: 100%;
 }
 
 .results {
     display: inline-block;
     width: 80%;
-    height: 60%;
-    overflow: scroll;
 }
 
 .panel {
     text-align: left;
 }
 
-.searchBox, .results {
+.sBoxPostSearch, .results {
     margin-top: 3%;
 }
 
-#randomSearch, #startOver {
+.rSearch, .restartSearch {
     display: none;
     margin-top: 5px;
 }
 
-.searchBox.expanded #randomSearch, .searchBox.postSearch #startOver {
+.sBoxExpanded .rSearch, .sBoxPostSearch .restartSearch {
     display: inline-block;
 }
 
 @media screen and (max-width: 560px) {
-  .searchBox:hover, .searchBox.expanded {
+  .searchBox:hover, .sBoxExpanded {
     width: 60%;
   }
   
-  #searchInput {
+  .sInput {
     font-size: 15px;
   }
 }

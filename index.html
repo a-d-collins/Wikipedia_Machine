@@ -3,46 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <title>Wikipedia_Machine</title>
-    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
     
     <link rel="stylesheet" href="css/style.css">
-      
-    <!-- Alternative to using 'onsubmit="return false;"' OR javascript .submit(function() {return false;}); method...
-        ~ only USE if you're told that it is better/more safe OR need form-submit functionality WITHOUT submission by use of the ENTER key
-    <script type="text/javascript">
-
-        function stopRKey(evt) { 
-          var evt = (evt) ? evt : ((event) ? event : null); 
-          var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
-          if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
-        } 
-
-        document.onkeypress = stopRKey; 
-
-    </script>-->
-
+    
   </head>
 
   <body>
       
-      <div class = 'searchBox preSearch'>
+      <div class = 'searchBox absoluteCenter'>
           <form id = 'searchForm'>
-              <input id = 'searchInput' type="text" required class="form-control" placeholder="Search Wikipedia" aria-describedby="sizing-addon1" autocomplete="off">
+              <input id = 'searchInput' type="text" required class="form-control sInput" placeholder="Search Wikipedia" aria-describedby="sizing-addon1" autocomplete="off">
               <span class = 'searchButton'><i id='searchIcon' class='fa fa-search'></i></span>
               <button class = 'clearInput' type='reset'><i id='clearInputIcon' class='fa fa-times'></i></button>
-              <p id = 'randomSearch'><a target="_blank" href="http://en.wikipedia.org/wiki/Special:Random">Random Article</a></p>
-              <p id="startOver"> | <a href="#" onclick="reloadDocument()">Start Over</a></p>
+              <p id = 'randomSearch' class='rSearch'><a target="_blank" href="http://en.wikipedia.org/wiki/Special:Random">Random Article</a></p>
+              <p id="startOver" class='restartSearch'> | <a href="#" onclick="reloadDocument()">Start Over</a></p>
           </form>
       </div>
       

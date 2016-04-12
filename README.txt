@@ -1,6 +1,19 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.7.1
+Wikipedia_Machine_v.2.7.2
+
+2.7.2:
+-- Goals:
+    1. DONE -- CLEAN UP UNUSED/COMMENTED CODE
+    2. TODO -- Clean up CSS. Follow CSS Lint rules
+    3. DONE -- ReName "preSearch" class to "absoluteCenter" -- "absoluteCenter" is easier to understand.
+    4. DONE -- Set <body> AND <html> to 100%
+    5. DONE -- Try using a different centering technique (http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ ALSO SEEN HERE https://davidwalsh.name/css-vertical-center OR http://vanseodesign.com/css/vertical-centering/ AND-FOR-HORIZ-ALIGN http://www.w3schools.com/css/css_align.asp)
+    CONTINUE IN V. 2.7.3
+    1. TODO -- Revert back to old centering technique
+    2. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    3. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    4. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.7.1:
 -- Goals:
