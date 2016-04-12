@@ -94,12 +94,28 @@ function inputFocus() {
 
 // reloadDocument() -- Reloads web page
 function reloadDocument() {
-    location.reload();
+    // Reloading a page IS NOT ALLOWED IN CODEPEN
+    // location.reload();
+    // Instead, try the following...
+    // Clear search results
+    $('.results').empty();
+    // Reset form
+    // $('#searchForm').reset(); does not work in codepen
+    // Clear form input field  
+    $('#searchInput').val('');
+    // Un-expand the searchBox (removing class 'sBoxExpanded')
+    $('.searchBox').removeClass('sBoxExpanded');
+    // Remove postSearch effects
+    $('.searchBox').removeClass('sBoxPostSearch');
+    $('#searchInput').removeClass('siPostSearch');
+    $('.searchButton').removeClass('sButtonPostSearch');
+    // Add absoluteCenter effects on .searchBox
+    $('.searchBox').addClass('absoluteCenter');
 }
 
 $(document).ready(function () {
     // Handle focus event for #searchInput
-    $('#searchInput').focus(function () {
+    $('#searchInput').click(function () {
         if (!$('.searchBox').hasClass('sBoxPostSearch')) {
             expandSearchBox();
         } else {

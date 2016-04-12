@@ -14,15 +14,67 @@ body {
     width: 60px;
 }
 
+.searchButton {
+    color: black;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 4px;
+    right: -2px;
+    top: -2px;
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.searchButton, .clearInput {
+    height: 60px;
+    position: absolute;
+    transition: all 0.2s ease;
+    width: 60px;
+}
+
+.clearInput {
+    background-color: transparent;
+    border: none;
+    font-size: 28px;
+    line-height: 60px;
+    right: -62px;
+    top: -2px;
+}
+
+.sInput {
+    border-radius: 30px;
+    font-size: 18px;
+    height: 56px;
+    opacity: 0;
+    padding-right: 50px;
+    transition: all 0.5s ease;
+    width: 100%;
+}
+
+.results {
+    display: inline-block;
+    width: 80%;
+}
+
+.panel {
+    text-align: left;
+}
+
+.rSearch, .restartSearch {
+    display: none;
+    margin-top: 5px;
+}
+
 .absoluteCenter {
-    position: relative;
+    bottom: 0;
+    left: 0;
     margin: auto;
-    top: 50%;
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .sBoxPostSearch {
@@ -46,27 +98,6 @@ body {
     transform: rotate(0deg);
 }
 
-.searchButton, .clearInput {
-    height: 60px;
-    position: absolute;
-    transition: all 0.2s ease;
-    width: 60px;
-}
-
-.searchButton {
-    color: black;
-    font-size: 30px;
-    padding-top: 10px;
-    padding-left: 4px;
-    right: -2px;
-    top: -2px;
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -o-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
-}
-
 .sInput:invalid ~ .searchButton {
     pointer-events: none;
 }
@@ -76,47 +107,14 @@ body {
     pointer-events: none;
 }
 
-.clearInput {
-    background-color: transparent;
-    border: none;
-    font-size: 28px;
-    line-height: 60px;
-    right: -62px;
-    top: -2px;
-}
-
 .sInput:invalid ~ .clearInput, .searchBox:not(.sBoxExpanded) .clearInput {
     opacity: 0;
     right: -2px;
     z-index: -1;
 }
 
-.sInput {
-    border-radius: 30px;
-    font-size: 18px;
-    height: 56px;
-    opacity: 0;
-    padding-right: 50px;
-    transition: all 0.5s ease;
-    width: 100%;
-}
-
-.results {
-    display: inline-block;
-    width: 80%;
-}
-
-.panel {
-    text-align: left;
-}
-
 .sBoxPostSearch, .results {
     margin-top: 3%;
-}
-
-.rSearch, .restartSearch {
-    display: none;
-    margin-top: 5px;
 }
 
 .sBoxExpanded .rSearch, .sBoxPostSearch .restartSearch {

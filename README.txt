@@ -1,6 +1,17 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.7.2
+Wikipedia_Machine_v.2.7.3
+
+2.7.3:
+-- Goals:
+    1. DONE -- Revert back to old centering technique
+    2. DONE -- Fix CodePen error due to stripping of certain capabilities (https://blog.codepen.io/documentation/editor/things-we-strip/)
+    3. DONE -- Reorganize CSS style sheet so that 'modification' classes come AFTER the standard classes (This should prevent conflicting properties)
+    CONTINUE IN V. 2.8.0
+    1. TODO -- Reorganize JS a little bit
+    2. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    3. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    4. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.7.2:
 -- Goals:
