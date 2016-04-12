@@ -24,7 +24,7 @@ body {
     position: relative;
 }
 
-.searchBox:hover, .searchBox.expandedSearchBox {
+.searchBox:hover, .searchBox.expanded {
     width: 40%;
 }
 
@@ -75,7 +75,7 @@ body {
     line-height: 60px;
 }
 
-#searchInput:invalid ~ .clearInput, #searchInput.preSearch:not(:focus) ~ .clearInput {
+#searchInput:invalid ~ .clearInput, .searchBox:not(.expanded) .clearInput {
     opacity: 0;
     right: -2px;
     z-index: -1;
@@ -109,12 +109,12 @@ body {
     text-decoration: underline;
 }
 
-#searchInput:focus ~ #randomSearch {
+.searchBox.expanded #randomSearch {
     display: block;
 }
 
 @media screen and (max-width: 560px) {
-  .searchBox:hover, .searchBox.expandedSearchBox {
+  .searchBox:hover, .searchBox.expanded {
     width: 60%;
   }
   

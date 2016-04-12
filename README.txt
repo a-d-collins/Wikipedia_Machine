@@ -1,6 +1,19 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.6.4
+Wikipedia_Machine_v.2.6.5
+
+2.6.5:
+-- Goals:
+    1. DONE -- (Re)fix issues with clearInput button and functionality (a) (DONE) Clickable problem (b) (DONE, 4/4/2016) Appearance when .searchBox is not expanded
+    2. DONE -- (4/3/2016) Get "Random Article" button to work (based off of .searchBox expanded property like the clearInput button)
+    3. DONE -- Replace "expandedSearchBox" with "expanded"
+    CONTINUE IN 2.7.0
+    2. TODO -- Format contents of .results <div> (to make things look nicer) (e.g. Use Bootstrap "Panels")
+    3. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    4. TODO -- Add 'Start over' button after first search
+    5. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    6. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    7. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.6.4:
 -- Goals:

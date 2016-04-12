@@ -68,7 +68,7 @@ function search() {
     /* 3/18/2016 -- Replacement, short-hand code */
     if ($('.searchBox').hasClass('preSearch')) {
         // Remove preSearch effects on .searchBox
-        $('.searchBox, #searchInput').removeClass('preSearch');
+        $('.searchBox').removeClass('preSearch');
         // Add postSearch effects
         $('.searchBox, #searchInput, .searchButton').addClass('postSearch');
         // TODO: Populate searchResults area
@@ -92,8 +92,8 @@ function search() {
 function expandSearchBox() {
     // If #searchInput is focus...
     if ($('#searchInput').is(':focus')) {
-        // Fix the width of the searchBox with class 'expandedSearchBox'
-        $('.searchBox').addClass('expandedSearchBox');
+        // Fix the width of the searchBox with class 'expanded'
+        $('.searchBox').addClass('expanded');
     } else {
         // Do nothing
     }
@@ -125,6 +125,11 @@ $(document).ready(function () {
         $('#searchInput').focus();
     });
     
+    $('#randomSearch').click(function() {
+        // Re-focus on #searchInput
+        $('#searchInput').focus();
+    });
+    
     /* Deprecated 3/31/2016
     // Handle  enter-key when input field is populated
     $('form input').keydown(function(event) {
@@ -151,8 +156,8 @@ $(document).ready(function () {
     $(document).on('click', function(event) {
         // And that click is outside of the .searchBox BEFORE the first search has been executed..
         if (!$(event.target).parents(".searchBox").length && !$('.searchBox').hasClass('postSearch')) {
-            // Remove class 'expandedSearchBox' from .searchBox AND un-fade the .searchButton
-            $('.searchBox').removeClass('expandedSearchBox');
+            // Remove class 'expanded' from .searchBox AND un-fade the .searchButton
+            $('.searchBox').removeClass('expanded');
         } else {
             // Do nothing
         }
