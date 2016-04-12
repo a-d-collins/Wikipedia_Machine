@@ -1,6 +1,18 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.5
+Wikipedia_Machine_v.2.6.1
+
+2.6.1:
+-- Goals:
+    1. TODO -- Replace v. 2.5 'Goal #4' with jquery .change() functionality
+    2. TODO -- Find out that the .change() function causes problems (e.g. No matter where you click outside of the textbox, the .change() function will be invoked)
+    IN V. 2.6.2 REVERT TO SUBMIT FUNCTIONALITY FROM v. 2.5
+    CONTINUE TODO LIST IN V. 2.6.3
+    2. TODO -- Format contents of .results <div> (to make things look nicer)
+    3. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    4. TODO -- Add 'Start over' button after first search
+    5. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    6. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
 
 2.5:
 -- Goals:
