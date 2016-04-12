@@ -1,5 +1,24 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
+Wikipedia_Machine_v.2.5
+
+2.5:
+-- Goals:
+    1. DONE -- (3/31/16) Deprecations
+        (a) .keydown event --> Functionality already handled by .submit function
+        (b) name of searchInput element (previously 'wikiThis')
+    2. DONE -- Play around more with jquery.ajax function
+    3. DONE -- Populate .results <div> with data from ajax call to Wikipedia
+    4. DONE -- Create else if condition in search() function to test whether #searchInput field has changed (functionality could be replaced by jquery .change() function if you wish to do so)
+    5. DONE -- Clear contents of .results <div> before new results are displayed
+    DO REST IN V. 2.6
+    7. TODO -- Replace v. 2.5 'Goal #4' with jquery .change() functionality
+    8. TODO -- Format contents of .results <div> (to make things look nicer)
+    9. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    10. TODO -- Add 'Start over' button after first search
+    11. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    10. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+
 2.4:
 -- Goals:
     1. DONE -- Test jquery.ajax function
