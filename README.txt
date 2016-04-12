@@ -1,6 +1,14 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.2
+Wikipedia_Machine_v.2.3
+
+2.3:
+-- Goals:
+    1. DONE -- Clean up index.js and style.css --> Remove unused code from version 2.2.
+    2. DONE -- Replace .keyup function with .keydown function
+    3. DONE -- Prevent default events when ENTER key is pressed in the search form (see <head> element of index.html for more details)
+    4. DONE -- Handle ENTER key --> STILL MORE TO DO WITH THIS, though
+    5. TODO -- Replace expandSearchBox() function and **'ed function with CSS
 
 2.2:
 -- Goals:

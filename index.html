@@ -17,14 +17,28 @@
     <script src="js/index.js"></script>
     
     <link rel="stylesheet" href="css/style.css">
+      
+    <!-- Alternative to using 'onsubmit="return false;"' OR javascript .submit(function() {return false;}); method...
+        ~ only USE if you're told that it is better/more safe OR need form-submit functionality WITHOUT submission by use of the ENTER key
+    <script type="text/javascript"> 
+
+        function stopRKey(evt) { 
+          var evt = (evt) ? evt : ((event) ? event : null); 
+          var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+          if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+        } 
+
+        document.onkeypress = stopRKey; 
+
+    </script>-->
 
   </head>
 
   <body>
       
       <div class = 'searchBox preSearch'>
-          <form>
-              <input id = 'searchInput' type="text" required class="form-control" placeholder="Type and search" aria-describedby="sizing-addon1">
+          <form id = 'searchForm'>
+              <input id = 'searchInput' name='wikiThis' type="text" required class="form-control" placeholder="Type and search" aria-describedby="sizing-addon1">
               <span class = 'searchButton'><i id='searchIcon' class='fa fa-search'></i></span>
               <button class = 'clearInput' type='reset'><i id='clearInputIcon' class='fa fa-times'></i></button>
           </form>
