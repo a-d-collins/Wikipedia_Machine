@@ -1,5 +1,4 @@
 body {
-    background-color: aqua;
     text-align: center;
 }
 
@@ -27,7 +26,7 @@ body {
 
 
 
-.searchBox:hover, .expandedSearchBox {
+.searchBox:hover, .searchBox.expandedSearchBox {
     width: 40%;
 }
 
@@ -41,11 +40,12 @@ body {
     transform: rotate(0deg);
 }
 
+/* NO LONGER NEEDED (3/17/2016)
 #searchInput:not(:focus) ~ .clearInput, .clearInput.hidden {
     opacity: 0;
     right: -2px;
     z-index: -1;
-}
+}*/
 
 .searchButton, .clearInput {
     position: absolute;
@@ -65,27 +65,36 @@ body {
     padding-top: 1px;
     padding-left: 4px;
     */
+    color: black;
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
 }
 
-.searchButton.faded {
-    color: #a6a6a6;
+#searchInput:not(:valid) ~ .searchButton {
+    color: cadetblue;
+    pointer-events: none;
 }
 
 .clearInput {
-    font-size: 28px;
+    background-color: transparent;
+    border: none;
     right: -62px;
     top: -2px;
+    font-size: 28px;
     line-height: 60px;
-    //z-index: -1;
+}
+
+#searchInput:not(:valid) ~ .clearInput {
+    opacity: 0;
+    right: 2px;
+    z-index: -1;
 }
 
 #searchInput {
     padding-right: 50px;
     border-radius: 30px;
-    height: 100%;
+    height: 56px;
     width: 100%;
     opacity: 0;
     font-size: 18px;
@@ -96,7 +105,7 @@ body {
     display: inline-block;
     width: 80%;
     min-height: 25px;
-    background-color: aqua;
+    //background-color: aqua;
 }
 
 .searchBox, .resultsContainer {
@@ -104,7 +113,7 @@ body {
 }
 
 @media screen and (max-width: 560px) {
-  .searchBox:hover, .expandedSearchBox {
+  .searchBox:hover, .searchBox.expandedSearchBox {
     width: 60%;
   }
   

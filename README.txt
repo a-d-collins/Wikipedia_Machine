@@ -1,6 +1,15 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.1
+Wikipedia_Machine_v.2.2
+
+2.2:
+-- Goals:
+    1. DONE -- Remove MOST all Javascript effects on .clearInput button (for more info see: http://codepen.io/shidhincr/pen/ICLBD)
+    2. (part1) DONE -- Remove MOST all Javascript effects on .searchButton
+    2. (part2) DONE -- Remove need for searchButtonEffects() method
+    3. TODO -- Replace .keyup function with .keydown function
+    4. TODO -- Prevent default events when ENTER key is pressed in the search form
+    5. TODO -- Handle ENTER key
 
 2.1:
 -- Goals:
