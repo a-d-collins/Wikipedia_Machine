@@ -23,11 +23,15 @@
   <body>
       
       <div class = 'searchBox preSearch'>
-          <input id = 'searchInput' type="text" class="form-control" placeholder="Type and search" aria-describedby="sizing-addon1" onclick="expandSearchBox()">
-          <span class = 'searchButton'><i id='searchIcon' class="fa fa-search" onclick="searchButtonClick()"></i></span>
+          <input id = 'searchInput' type="text" class="form-control" placeholder="Type and search" aria-describedby="sizing-addon1">
+          <span class = 'searchButton'><i id='searchIcon' class='fa fa-search'></i></span>
+          <span class = 'clearInput hidden'><i id='clearInputIcon' class='fa fa-times'></i></span>
       </div>
       
-      <div id = "resultsContainer"></div>
+      <div>
+        <div class = "resultsContainer"></div>
+      </div>
+      
     
   </body>
 </html>

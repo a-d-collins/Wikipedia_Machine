@@ -1,6 +1,16 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2
+Wikipedia_Machine_v.2.1
+
+2.1:
+-- Goals:
+    1. DONE -- Alter searchButtonClick() function so that it is more 'adaptable'
+    2. DONE -- Fine-tune css of searchResults div and .searchBox
+    3. DONE (somewhat) -- Read mediawiki documentation
+    4. TODO -- Sort out issue with .clearInput button
+    5. TODO -- Populate searchResults div
+    6. TODO -- Get ENTER key to work as a "submit search" key
+    7. TODO -- Suggested/autocompleted text
 
 2.0:
 -- Goals:
