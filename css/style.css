@@ -96,6 +96,9 @@ body {
     width: 80%;
     height: 60%;
     overflow: scroll;
+}
+
+.panel {
     text-align: left;
 }
 
@@ -103,14 +106,13 @@ body {
     margin-top: 3%;
 }
 
-#randomSearch {
+#randomSearch, #startOver {
     display: none;
     margin-top: 5px;
-    text-decoration: underline;
 }
 
-.searchBox.expanded #randomSearch {
-    display: block;
+.searchBox.expanded #randomSearch, .searchBox.postSearch #startOver {
+    display: inline-block;
 }
 
 @media screen and (max-width: 560px) {

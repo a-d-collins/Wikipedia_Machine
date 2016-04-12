@@ -46,6 +46,7 @@ function searchResults() {
                 // append a bootstrap panel that contains page.title, pageInfo, and acts as a link to the matching wikipedia page
                 $('.results').append('<a target="_blank" href="https://en.wikipedia.org/?curid=' + page.pageid + '"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'+page.title+'</h3></div><div class="panel-body">'+pageInfo+'</div></div></a>');
             }
+            $('.results').append('<p><a href="#">Back to top</a></p>');
 
         },
         error: function (errorMessage) {
@@ -88,13 +89,18 @@ function search() {
 // Called when #searchInput is clicked
 // 3/18/2016 -- TODO: Replace with CSS
 function expandSearchBox() {
-    // If #searchInput is focus...
-    if ($('#searchInput').is(':focus')) {
-        // Fix the width of the searchBox with class 'expanded'
-        $('.searchBox').addClass('expanded');
-    } else {
-        // Do nothing
-    }
+    // Expand the width of the searchBox with class 'expanded'
+    $('.searchBox').addClass('expanded');
+}
+
+// inputFocus() -- focuses on #searchInput field
+function inputFocus() {
+    $('#searchInput').focus();
+}
+
+// reloadDocument() -- Reloads web page
+function reloadDocument() {
+    location.reload();
 }
 
 $(document).ready(function () {
@@ -112,7 +118,7 @@ $(document).ready(function () {
     // #clearInputIcon is characterized as a 'reset' element in the html form and will, by default, reset the input field
     $('#clearInputIcon').click(function() {
         // Focus on the input field
-        $('#searchInput').focus();
+        inputFocus();
     });
     
     // Handle click on #searchIcon
@@ -120,12 +126,12 @@ $(document).ready(function () {
     $('#searchIcon').click(function() {
         search();
         // (4/3/2016) Focus on #searchInput
-        $('#searchInput').focus();
+        inputFocus();
     });
     
     $('#randomSearch').click(function() {
         // Re-focus on #searchInput
-        $('#searchInput').focus();
+        inputFocus();
     });
     
     /* Deprecated 3/31/2016

@@ -1,6 +1,17 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.7.0
+Wikipedia_Machine_v.2.7.1
+
+2.7.1:
+-- Goals:
+    1. DONE -- Add 'Start over' button after first search that reloads the document
+    2. DONE -- Change input placeholder from "Type and search" to "Search Wikipedia"
+    3. NOT-TODO -- Replace expandSearchBox() function and **'ed function with CSS (Other functionalities currently depend on the .searchBox.expanded class)
+    4. DONE -- Create function titled "inputFocus()" that handles $('#searchInput').focus() functionality
+    *TODO IN V. 2.7.2: CLEAN UP UNUSED/COMMENTED CODE
+    5. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    6. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    7. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.7.0:
 -- Goals:
