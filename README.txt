@@ -1,6 +1,19 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.6.2
+Wikipedia_Machine_v.2.6.3
+
+2.6.3:
+-- Goals:
+    1. DONE -- (4/3/2016) Clean-up/eliminate clearInput() function (separate function not needed)
+    2. DONE -- (4/3/2016) Have browser focus() on #searchInput after #searchIcon is clicked
+    CONTINUE IN V. 2.6.4
+    2. TODO -- Make page.title a link to the wikipedia page
+    3. TODO -- Format contents of .results <div> (to make things look nicer) (e.g. Use Bootstrap "Panels")
+    4. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    5. TODO -- Add 'Start over' button after first search
+    6. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    7. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    8. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.6.2:
 -- Goals:

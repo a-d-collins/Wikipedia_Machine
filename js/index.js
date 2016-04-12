@@ -56,11 +56,12 @@ function searchResults() {
     });
 }
 
+/* Deprecated 4/3/2016
 // Handles function of .clearInput button...
 function clearInput() {
     // Focus on the input field
     $('#searchInput').focus();
-}
+}*/
 
 // Handles events when searchButton is clicked (click event only occurs when pointer-events CSS attribute does NOT have value 'none')
 function search() {
@@ -110,13 +111,18 @@ $(document).ready(function () {
     });
     
     // Handle click on #clearInputIcon
+    // #clearInputIcon is characterized as a 'reset' element in the html form and will, by default, reset the input field
     $('#clearInputIcon').click(function() {
-        clearInput();
+        // Focus on the input field
+        $('#searchInput').focus();
     });
     
     // Handle click on #searchIcon
+    // TODO (added 4/3/2016 @ 11:20am): Make #searchIcon type="submit" --> Doing so could eliminate unneeded code (i.e. the next 5 lines (Pay attention to the focus() functionality added on 4/3/2016. Make sure it works when element changed to type="submit"))
     $('#searchIcon').click(function() {
         search();
+        // (4/3/2016) Focus on #searchInput
+        $('#searchInput').focus();
     });
     
     /* Deprecated 3/31/2016
