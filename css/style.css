@@ -103,6 +103,16 @@ body {
     margin-top: 3%;
 }
 
+#randomSearch {
+    display: none;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+
+#searchInput:focus ~ #randomSearch {
+    display: block;
+}
+
 @media screen and (max-width: 560px) {
   .searchBox:hover, .searchBox.expandedSearchBox {
     width: 60%;

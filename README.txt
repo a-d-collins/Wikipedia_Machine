@@ -1,6 +1,20 @@
 A Pen created at CodePen.io. You can find this one at ____.
 
-Wikipedia_Machine_v.2.6.3
+Wikipedia_Machine_v.2.6.4
+
+2.6.4:
+-- Goals:
+    1. DONE -- Make page.title a link to the wikipedia page
+    2. TODO -- Add "Random Article" button
+    CONTINUE IN 2.6.5
+    3. TODO -- Refix issues with clearInput button and functionality
+    4. TODO -- Get "Random Article" button to work
+    5. TODO -- Format contents of .results <div> (to make things look nicer) (e.g. Use Bootstrap "Panels")
+    6. TODO -- Replace expandSearchBox() function and **'ed function with CSS
+    7. TODO -- Add 'Start over' button after first search
+    8. TODO -- Autocomplete function (http://api.jqueryui.com/autocomplete/#option-source)
+    9. TODO -- Autocomplete with caching (https://jqueryui.com/autocomplete/#remote-with-cache)
+    10. TODO -- (added 4/3/2016 @ 11:20am) Make #searchIcon type="submit" --> Doing so could eliminate unneeded code
 
 2.6.3:
 -- Goals:

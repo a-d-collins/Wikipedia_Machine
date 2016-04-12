@@ -20,7 +20,7 @@ function searchResults() {
             for (var i = 0; i < data.query.pages.length; i++) {
                 page = data.query.pages[i];
                 
-                $('.results').append('<p>'+page.title+'</p>');
+                $('.results').append('<p><a target="_blank" href="https://en.wikipedia.org/?curid=' + page.pageid + '">'+page.title+'</a></p>');
                 // If the search result does not have a description...
                 if (!page.terms.description) {
                     // Then it is highly unlikely that the page is a 'Wikipedia disambiguation page' and therefore,
